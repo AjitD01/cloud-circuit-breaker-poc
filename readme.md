@@ -35,23 +35,25 @@ Circuit breaker keeps returning the fallback until the communitation with suppli
 
 ## Steps
 
-Open a terminal for running the supplier service.
+### Startup
 
-```bash
-cd supplier
-mvn clean spring-boot:run
-```
+If you use **```gnome-terminal```**, open a terminal and execute: ```./run-demo```
+
+The script will open 3 ```gnome-terminal``` tabs and execute ```Supplier```, ```Client``` and ```Dashboard``` applications.
+
+If you don't use ```gnome-terminal``` you will have to execute the following commands, each on a different terminal:
+
+Tab 1: ```cd supplier && mvn clean spring-boot:run```
+
+Tab 2: ```cd client && mvn clean spring-boot:run```
+
+Tab 3: ```cd hystrix-dashboard && mvn clean spring-boot:run```
+
+### Request Services
 
 Get http://localhost/8090/recommended
 
 You should get: *Spring in Action (Manning), Cloud Native Java (O'Reilly), Learning Spring Boot (Packt)*
-
-Open a new terminal for running the client service.
-
-```bash
-cd client
-mvn clean spring-boot:run
-```
 
 Get http://localhost/8080/to-read
 
@@ -72,6 +74,11 @@ The circuit breaker continues returning the fallback response while the circuit 
 http://localhost/8080/hystrix.stream publishes events to be consumed by the Hystrix dashboard.
 
 ## Dashboard
+
+```bash
+cd hystrix-dashboard
+mvn clean spring-boot:run
+```
 
 In this demo, Hystrix Dashboards runs on http://localhost:7979
 

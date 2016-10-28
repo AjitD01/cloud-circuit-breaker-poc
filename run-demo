@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+gnome-terminal \
+    --tab --title="Client" -e "bash -c 'cd client && mvn clean spring-boot:run';bash" \
+    --tab --title="Supplier" -e "bash -c 'cd supplier && mvn clean spring-boot:run';bash" \
+    --tab --title="Dashboard" -e "bash -c 'cd hystrix-dashboard && mvn clean spring-boot:run';bash"
+
+exit 0
