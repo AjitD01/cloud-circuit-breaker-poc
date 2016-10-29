@@ -1,0 +1,6 @@
+rootProject.name = 'cloud-circuit-breaker-poc'
+
+include 'supplier'
+include 'client'
+include 'hystrix-dashboard'
+

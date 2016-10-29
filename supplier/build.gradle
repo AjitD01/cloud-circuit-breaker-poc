@@ -17,7 +17,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'io.spring.dependency-management'
 
 jar {
-	baseName = 'client'
+	baseName = 'supplier'
 	version = '1.0.0-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -29,15 +29,8 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR1"
-	}
 }
 
 
