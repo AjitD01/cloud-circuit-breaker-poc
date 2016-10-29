@@ -25,9 +25,9 @@ Circuit breaker keeps returning the fallback until the communitation with suppli
 
 ## Services
 
-- **Bookstore**: Supplier, provides recommended books: http://localhost/8090/recommended
-- **To-Read**: Client, depends on Bookstore for retrieving recommended books: http://localhost/8080/to-read
-- **Dashboard**: Circuit breaker monitor Dashboard: http://localhost:7979
+- **Bookstore**: Supplier, provides recommended books: <http://localhost:8090/recommended>
+- **To-Read**: Client, depends on Bookstore for retrieving recommended books: <http://localhost:8080/to-read>
+- **Dashboard**: Circuit breaker monitor Dashboard: <http://localhost:7979>
 
 ## Flow
 
@@ -56,17 +56,17 @@ Tab 3: ```cd hystrix-dashboard && mvn clean spring-boot:run```
 
 ### Requests
 
-Get http://localhost/8090/recommended
+Get <http://localhost:8090/recommended>
 
 You should get: *Spring in Action (Manning), Cloud Native Java (O'Reilly), Learning Spring Boot (Packt)*
 
-Get http://localhost/8080/to-read
+Get <http://localhost:8080/to-read>
 
 You should get: *Spring in Action (Manning), Cloud Native Java (O'Reilly), Learning Spring Boot (Packt)*
 
-Kill Supplier Service: hit **CTRL+C** in supplier terminal
+Kill Supplier Service: hit **CTRL+C** in Supplier terminal
 
-Get http://localhost/8080/to-read
+Get <http://localhost:8080/to-read>
 
 You should get fallback response from circuit breaker: *Cloud Native Java (O'Reilly)*
 
@@ -101,15 +101,15 @@ public String reliable() {
 }
 ```
 
-**NOTE**: the fallback method (```reliable()```) must be declared in the same class than the intercepted method (```readingList()```).
+**NOTE**: the fallback method ```reliable()``` must be declared in the same class than the intercepted method ```readingList()```.
 
 For the complete example see [BookService.java](client/src/main/java/ar/com/kamikazesoftware/BookService.java).
 
 ## Hystrix Dashboard
 
-In this demo, Hystrix Dashboards runs on http://localhost:7979
+In this demo, Hystrix Dashboards runs on <http://localhost:7979>
 
-In the home page of the Dashboard, connect to the event stream http://localhost:8080/hystrix.stream
+In the home page of the Dashboard, connect to the event stream <http://localhost:8080/hystrix.stream>
 
 ### Legends
 
